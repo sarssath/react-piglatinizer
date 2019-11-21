@@ -15,14 +15,15 @@ class App extends React.Component {
         var vowels = ["a", "e", "i", "o", "u"];
         console.log(this.state.value);
         var val = this.state.value;
-        var split = val.split("");
+        var lowerCase = val.toLowerCase();
+        var split = lowerCase.split("");
         var firstLetter = split[0];
         console.log(firstLetter);
         if (vowels.includes(firstLetter)) {
-            this.setState({word: val + "ay"});
+            this.setState({word: lowerCase + "ay"});
         } else {
-        //   var change = input.substring(1,4);
-        // $(".output").text(change + firstLetter + "ay");
+            var change = this.state.value.substring(1);
+            this.setState({word: change + firstLetter + "ay"});
         }
     }
 
